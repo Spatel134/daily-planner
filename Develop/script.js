@@ -2,8 +2,7 @@
 function generateSchedule() {
 
   var today = getDateNow();
-  // var hourNow = getHourNow();
-  var hourNow = 13;
+  var hourNow = getHourNow();
   $("#currentDay").append(today);
 
 
