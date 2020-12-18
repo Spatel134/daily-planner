@@ -1,9 +1,16 @@
 function generateSchedule() {
+
+  var today = getDateNow();
+  $("#currentDay").append(today);
+
+
   var timeArray = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
 
-  for(i = 0; i <9; i++){
-    if(localStorage.getItem(timeArray[i]!=null)){
-      localStorage.setItem(timeArray[i], "");
+  for(var j = 0; j < 9; j++){
+    console.log("Enter j");
+    if(localStorage.getItem(timeArray[j])==null){
+      console.log("clear");
+      localStorage.setItem(timeArray[j], "");
     }
   }
 
@@ -29,3 +36,11 @@ function saveDescription(key, value){
 
 generateSchedule();
 
+function getDateNow(){
+  return moment().format('dddd, MMMM Do YYYY');
+}
+
+// function getPastPresentFuture(time){
+//   if()
+
+// }
